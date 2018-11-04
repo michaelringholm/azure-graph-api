@@ -1,0 +1,40 @@
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#drives",
+    "value": [
+        {
+            "createdDateTime": "2017-10-26T21:15:39Z",
+            "description": "",
+            "id": "b!uKXzQ2lFWEiAI__0LnOS9cdV0OGLIUxCqGyFtjWfTw3me4anN2R8TJSm-nazIyRf",
+            "lastModifiedDateTime": "2018-09-14T12:03:42Z",
+            "name": "OneDrive",
+            "webUrl": "https://logisticsas-my.sharepoint.com/personal/mrs_commentor_dk/Documents",
+            "driveType": "business",
+            "createdBy": {
+                "user": {
+                    "displayName": "Systemkonto"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "email": "mrs@commentor.dk",
+                    "id": "6fea042d-d31a-4af7-949c-b864089cc474",
+                    "displayName": "Michael Ringholm Sundgaard"
+                }
+            },
+            "owner": {
+                "user": {
+                    "email": "mrs@commentor.dk",
+                    "id": "6fea042d-d31a-4af7-949c-b864089cc474",
+                    "displayName": "Michael Ringholm Sundgaard"
+                }
+            },
+            "quota": {
+                "deleted": 11731871,
+                "remaining": 1095440113160,
+                "state": "normal",
+                "total": 1099511627776,
+                "used": 1128050298
+            }
+        }
+    ]
+}

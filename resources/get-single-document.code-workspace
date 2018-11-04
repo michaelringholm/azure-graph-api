@@ -1,0 +1,44 @@
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('6fea042d-d31a-4af7-949c-b864089cc474')/drive/items/$entity",
+    "createdDateTime": "2018-02-26T13:14:23Z",
+    "eTag": "\\"{
+        58F722B1-44D7-4F2B-9F0C-41BD5BCF2455
+    },
+    2\\"",
+    "id": "01IKWSDM5REL3VRV2EFNHZ6DCBXVN46JCV",
+    "lastModifiedDateTime": "2018-02-26T12:10:22Z",
+    "name": "7Digital",
+    "webUrl": "https://logisticsas-my.sharepoint.com/personal/mrs_commentor_dk/Documents/7Digital",
+    "cTag": "\\"c: {
+        58F722B1-44D7-4F2B-9F0C-41BD5BCF2455
+    },
+    0\\"",
+    "size": 675,
+    "createdBy": {
+        "user": {
+            "email": "mrs@commentor.dk",
+            "id": "6fea042d-d31a-4af7-949c-b864089cc474",
+            "displayName": "Michael Ringholm Sundgaard"
+        }
+    },
+    "lastModifiedBy": {
+        "user": {
+            "email": "mrs@commentor.dk",
+            "id": "6fea042d-d31a-4af7-949c-b864089cc474",
+            "displayName": "Michael Ringholm Sundgaard"
+        }
+    },
+    "parentReference": {
+        "driveId": "b!uKXzQ2lFWEiAI__0LnOS9cdV0OGLIUxCqGyFtjWfTw3me4anN2R8TJSm-nazIyRf",
+        "driveType": "business",
+        "id": "01IKWSDM56Y2GOVW7725BZO354PWSELRRZ",
+        "path": "/drive/root:"
+    },
+    "fileSystemInfo": {
+        "createdDateTime": "2018-02-26T13:14:23Z",
+        "lastModifiedDateTime": "2018-02-26T12:10:22Z"
+    },
+    "folder": {
+        "childCount": 1
+    }
+}

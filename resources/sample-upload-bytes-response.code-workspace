@@ -1,0 +1,49 @@
+{
+    "@odata.context": "https://logisticsas-my.sharepoint.com/personal/mrs_commentor_dk/_api/v2.0/$metadata#items/$entity",
+    "@odata.type": "#oneDrive.item",
+    "@odata.id": "https://logisticsas-my.sharepoint.com/personal/mrs_commentor_dk/_api/v2.0/drive/items/01IKWSDMYKRLSAYN3J7ZBJSRBORPYUYFES",
+    "@odata.editLink": "drive/items/01IKWSDMYKRLSAYN3J7ZBJSRBORPYUYFES",
+    "@content.downloadUrl": "https://logisticsas-my.sharepoint.com/personal/mrs_commentor_dk/_layouts/15/download.aspx?UniqueId=0ce48a0a-6937-42fe-9944-2e8bf14c1492&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbG9naXN0aWNzYXMtbXkuc2hhcmVwb2ludC5jb21ANjM1YWEwMWUtZjE5ZC00OWVjLThhZWQtNGIyZTQzMTJhNjI3IiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU0MTM1MDE2OCIsImV4cCI6IjE1NDEzNTM3NjgiLCJlbmRwb2ludHVybCI6IkVmajRFWlNQQkJzdDdqeHVMdkE1eFhENWFvYk54ODNqTjl5MmY2b3RiVU09IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNTEiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6IlpHVXhZemxtT1dVdFpqQmlNQzAzTURBd0xUQTRaakF0T0daaE56TTBZamsxWlRjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJORE5tTTJFMVlqZ3RORFUyT1MwME9EVTRMVGd3TWpNdFptWm1OREpsTnpNNU1tWTEiLCJhcHBfZGlzcGxheW5hbWUiOiJmcC1pbmRydi1wbC1kZXZlbG9wbWVudCIsIm5hbWVpZCI6ImMyMDZiNjUwLTEyYjYtNGMwOC05ZjRjLTcyODBlYzhjZWEyOUA2MzVhYTAxZS1mMTlkLTQ5ZWMtOGFlZC00YjJlNDMxMmE2MjciLCJyb2xlcyI6Imdyb3VwLnJlYWQgYWxsc2l0ZXMubWFuYWdlIGFsbGZpbGVzLndyaXRlIGFsbGZpbGVzLnJlYWQgYWxscHJvZmlsZXMucmVhZCIsInR0IjoiMSIsInVzZVBlcnNpc3RlbnRDb29raWUiOm51bGx9.QUFzQWFiOU00ZGFlUUdwNjVQZkFZcmM5UTNVM3JmaTZmVVZaUVZ1d2VMdz0&ApiVersion=2.0",
+    "createdBy": {
+        "application": {
+            "id": "c206b650-12b6-4c08-9f4c-7280ec8cea29",
+            "displayName": "fp-indrv-pl-development"
+        }
+    },
+    "createdDateTime": "2018-11-04T16:25:54Z",
+    "eTag": "\\"{
+        0CE48A0A-6937-42FE-9944-2E8BF14C1492
+    },
+    6\\"",
+    "id": "01IKWSDMYKRLSAYN3J7ZBJSRBORPYUYFES",
+    "lastModifiedBy": {
+        "application": {
+            "id": "c206b650-12b6-4c08-9f4c-7280ec8cea29",
+            "displayName": "fp-indrv-pl-development"
+        }
+    },
+    "lastModifiedDateTime": "2018-11-04T16:49:28Z",
+    "name": "file1.txt",
+    "parentReference": {
+        "driveId": "b!uKXzQ2lFWEiAI__0LnOS9cdV0OGLIUxCqGyFtjWfTw3me4anN2R8TJSm-nazIyRf",
+        "driveType": "business",
+        "id": "01IKWSDMZAKBZD3FAPIRCLUL2Q74DZRYMZ",
+        "path": "/drive/root:/Temp"
+    },
+    "webUrl": "https://logisticsas-my.sharepoint.com/personal/mrs_commentor_dk/Documents/Temp/file1.txt",
+    "cTag": "\\"c: {
+        0CE48A0A-6937-42FE-9944-2E8BF14C1492
+    },
+    6\\"",
+    "file": {
+        "hashes": {
+            "quickXorHash": "QRDCEIhQBCMAAAAABgAAAAAAAAA="
+        },
+        "mimeType": "text/plain"
+    },
+    "fileSystemInfo": {
+        "createdDateTime": "2018-11-04T16:25:54Z",
+        "lastModifiedDateTime": "2018-11-04T16:49:28Z"
+    },
+    "size": 6
+}
