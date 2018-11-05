@@ -18,9 +18,13 @@ namespace msgraph
             var builder = serviceCollection.BuildServiceProvider();
 
             var msGraph = builder.GetService<IDocumentProvider>();
+            //var serviceUser = msGraph.GetUser("pdf@commentor.dk");
             var serviceUser = msGraph.GetUser("mrs@commentor.dk");
             var documents = msGraph.GetDocuments();
             //var folders = msGraph.GetFolders();
+
+            var test = File.ReadAllBytes("..\\..\\resources\\source\\simple-html.html");
+            msGraph.ConvertDocumentToPDF(test, $"Temp/222.html", serviceUser.Id);
 
             var htmlSimpleInputBytes = File.ReadAllBytes("..\\..\\resources\\source\\simple-html.html");
             byte[] pdfHTMLSimpleDocBytes = msGraph.ConvertDocumentToPDF(htmlSimpleInputBytes, $"Temp/{Guid.NewGuid()}.html", serviceUser.Id);

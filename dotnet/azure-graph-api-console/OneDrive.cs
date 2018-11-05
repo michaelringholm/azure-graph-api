@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Microsoft.Graph;
@@ -95,6 +96,8 @@ namespace msgraph
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
                 var response = _restClient.putResponse(url, byteContent);
                 var responseBody = response.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+                if(response.StatusCode != HttpStatusCode.Created || response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception(responseBody);
                 var document = JsonConvert.DeserializeObject<Document>(responseBody);
                 return document;
             }
