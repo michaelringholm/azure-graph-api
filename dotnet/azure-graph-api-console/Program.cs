@@ -23,9 +23,6 @@ namespace msgraph
             var documents = msGraph.GetDocuments();
             //var folders = msGraph.GetFolders();
 
-            var test = File.ReadAllBytes("..\\..\\resources\\source\\simple-html.html");
-            msGraph.ConvertDocumentToPDF(test, $"Temp/222.html", serviceUser.Id);
-
             var htmlSimpleInputBytes = File.ReadAllBytes("..\\..\\resources\\source\\simple-html.html");
             byte[] pdfHTMLSimpleDocBytes = msGraph.ConvertDocumentToPDF(htmlSimpleInputBytes, $"Temp/{Guid.NewGuid()}.html", serviceUser.Id);
             File.WriteAllBytes($"..\\..\\resources\\target\\simple-html.pdf", pdfHTMLSimpleDocBytes);
