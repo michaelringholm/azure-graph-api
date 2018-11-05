@@ -1,6 +1,6 @@
 using System;
 
-namespace azure_ad_console
+namespace msgraph
 {
     public class SimpleGroup
     {

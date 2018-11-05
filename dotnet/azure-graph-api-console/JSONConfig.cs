@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
 
-namespace azure_ad_console
+namespace msgraph
 {
     public class JSONConfig : IConfiguration
     {

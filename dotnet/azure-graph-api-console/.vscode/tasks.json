@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/azure-graph-drive-console.csproj"
+                "${workspaceFolder}/azure-graph-api-console.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

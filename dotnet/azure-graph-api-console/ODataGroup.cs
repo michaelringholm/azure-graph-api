@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Graph;
 
-namespace azure_ad_console
+namespace msgraph
 {
     public class ODataGroup
     {
