@@ -83,13 +83,6 @@ namespace msgraph
 
         public void DeleteDocumentById(string userId, string itemId)
         {
-            /* 
-            DELETE /drives/{drive-id}/items/{item-id}
-            DELETE /groups/{group-id}/drive/items/{item-id}
-            DELETE /me/drive/items/{item-id}
-            DELETE /sites/{siteId}/drive/items/{itemId}
-            DELETE /users/{userId}/drive/items/{itemId}
-            */
             var urlRoot = $"https://graph.microsoft.com/v1.0/";
             var url = $"{urlRoot}/users/{userId}/drive/items/{itemId}";
             var response = _restClient.delResponse(url);
