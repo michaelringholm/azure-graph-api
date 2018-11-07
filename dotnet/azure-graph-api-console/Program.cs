@@ -18,8 +18,7 @@ namespace msgraph
             var builder = serviceCollection.BuildServiceProvider();
 
             var msGraph = builder.GetService<IDocumentProvider>();
-            //var serviceUser = msGraph.GetUser("pdf@commentor.dk");
-            var serviceUser = msGraph.GetUser("mrs@commentor.dk");
+            var serviceUser = msGraph.GetUser("pdf@commentor.dk");
             var documents = msGraph.GetDocuments();
             //var folders = msGraph.GetFolders();
 
@@ -44,10 +43,10 @@ namespace msgraph
             File.WriteAllBytes($"..\\..\\resources\\target\\csv-invoice.pdf", pdfCSVInvoiceDocBytes);*/
 
             var rootDocs = msGraph.GetRootDocuments(serviceUser.Id);            
-            var doc1 = msGraph.GetDocumentByPath(serviceUser.Id, "Temp/dummy.txt");
-            var doc2 = msGraph.GetDocumentById(serviceUser.Id, "01IKWSDM5REL3VRV2EFNHZ6DCBXVN46JCV"); // 01IKWSDMZZH4XLSPOKLNA33GWZD6XF7MC5
-            var doc3 = msGraph.GetDocumentByPath(serviceUser.Id, "7Digital");
-            var childDocuments = msGraph.GetChildDocumentsById(serviceUser.Id, "01IKWSDM5REL3VRV2EFNHZ6DCBXVN46JCV");
+            var doc1 = msGraph.GetDocumentByPath(serviceUser.Id, "dummy.txt");
+            //var doc2 = msGraph.GetDocumentById(serviceUser.Id, "01IKWSDM5REL3VRV2EFNHZ6DCBXVN46JCV"); // 01IKWSDMZZH4XLSPOKLNA33GWZD6XF7MC5
+            //var doc3 = msGraph.GetDocumentByPath(serviceUser.Id, "7Digital");
+            //var childDocuments = msGraph.GetChildDocumentsById(serviceUser.Id, "01IKWSDM5REL3VRV2EFNHZ6DCBXVN46JCV");
             
             var smallBuffer = System.Text.Encoding.UTF8.GetBytes("Empty");
             var smallDocName = Guid.NewGuid().ToString();

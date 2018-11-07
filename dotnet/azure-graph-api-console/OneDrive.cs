@@ -70,8 +70,32 @@ namespace msgraph
 
         public byte[] ConvertDocumentToPDF(byte[] inputDocumentBytes, string itemPath, string userId)
         {
-            var document = UploadSmallDocument(inputDocumentBytes, itemPath, userId);
-            return DownloadAs("pdf", userId, document.id);
+            Document document;
+            if(inputDocumentBytes.Length > 3145728) // If larger than 3MB
+                document = UploadLargeDocument(inputDocumentBytes, itemPath, userId);
+            else
+                document = UploadSmallDocument(inputDocumentBytes, itemPath, userId);
+
+            var docBytes = DownloadAs("pdf", userId, document.id);
+            DeleteDocumentById(userId, document.id);
+            return docBytes;
+        }
+
+        public void DeleteDocumentById(string userId, string itemId)
+        {
+            /* 
+            DELETE /drives/{drive-id}/items/{item-id}
+            DELETE /groups/{group-id}/drive/items/{item-id}
+            DELETE /me/drive/items/{item-id}
+            DELETE /sites/{siteId}/drive/items/{itemId}
+            DELETE /users/{userId}/drive/items/{itemId}
+            */
+            var urlRoot = $"https://graph.microsoft.com/v1.0/";
+            var url = $"{urlRoot}/users/{userId}/drive/items/{itemId}";
+            var response = _restClient.delResponse(url);
+            var responseBody = response.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+            if(!response.IsSuccessStatusCode)
+                throw new Exception(responseBody);
         }
 
         private Document CreateDocument(string documentName)
@@ -96,7 +120,7 @@ namespace msgraph
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
                 var response = _restClient.putResponse(url, byteContent);
                 var responseBody = response.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-                if(response.StatusCode != HttpStatusCode.Created || response.StatusCode != HttpStatusCode.OK)
+                if((response.StatusCode != HttpStatusCode.Created) && (response.StatusCode != HttpStatusCode.OK))
                     throw new Exception(responseBody);
                 var document = JsonConvert.DeserializeObject<Document>(responseBody);
                 return document;

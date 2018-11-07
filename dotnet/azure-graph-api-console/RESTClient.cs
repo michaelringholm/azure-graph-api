@@ -30,6 +30,15 @@ namespace msgraph
             return response;
         }
 
+        public HttpResponseMessage delResponse(string url)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
+            HttpResponseMessage response = client.DeleteAsync(url).ConfigureAwait(false).GetAwaiter().GetResult();
+            return response;
+        }        
+
         public HttpResponseMessage getResponse(string url)
         {
             HttpClient client = new HttpClient();
