@@ -15,5 +15,6 @@ namespace msgraph
         IEnumerable<Document> GetChildDocumentsById(string userId, string itemId);
         Document UploadSmallDocument(byte[] inputDocumentBytes, string itemPath, string userId);
         Document UploadLargeDocument(byte[] inputDocumentBytes, string itemPath, string userId);
+        void DeleteDocumentById(string userId, string itemId);
     }
 }

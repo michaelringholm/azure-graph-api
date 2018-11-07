@@ -134,7 +134,7 @@ namespace msgraph
             return _oneDrive.UploadLargeDocument(inputDocumentBytes, itemPath, userId);
         }
 
-        public void DeleteDocumentByPath(string userId, string itemId)
+        public void DeleteDocumentById(string userId, string itemId)
         {
             _oneDrive.DeleteDocumentById(userId, itemId);
         }        

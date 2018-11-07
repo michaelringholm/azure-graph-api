@@ -22,6 +22,10 @@ namespace msgraph
             var documents = msGraph.GetDocuments();
             //var folders = msGraph.GetFolders();
 
+            /*var htmlLargeInputBytes = File.ReadAllBytes("..\\..\\resources\\source\\large-file.pptx");
+            byte[] pdfHTMLLargeDocBytes = msGraph.ConvertDocumentToPDF(htmlLargeInputBytes, $"Temp/{Guid.NewGuid()}.pptx", serviceUser.Id);
+            File.WriteAllBytes($"..\\..\\resources\\target\\large-file-pptx.pdf", pdfHTMLLargeDocBytes);*/
+
             var htmlSimpleInputBytes = File.ReadAllBytes("..\\..\\resources\\source\\simple-html.html");
             byte[] pdfHTMLSimpleDocBytes = msGraph.ConvertDocumentToPDF(htmlSimpleInputBytes, $"Temp/{Guid.NewGuid()}.html", serviceUser.Id);
             File.WriteAllBytes($"..\\..\\resources\\target\\simple-html.pdf", pdfHTMLSimpleDocBytes);
@@ -51,10 +55,12 @@ namespace msgraph
             var smallBuffer = System.Text.Encoding.UTF8.GetBytes("Empty");
             var smallDocName = Guid.NewGuid().ToString();
             var smallDoc = msGraph.UploadSmallDocument(smallBuffer, $"Temp/{smallDocName}.txt", serviceUser.Id);
+            msGraph.DeleteDocumentById(serviceUser.Id, smallDoc.id);
 
             var largeBuffer = System.IO.File.ReadAllBytes("..\\..\\resources\\source\\doc.docx");
             var largeDocName = Guid.NewGuid().ToString();
             var largeDoc = msGraph.UploadLargeDocument(largeBuffer, $"Temp/{largeDocName}.txt", serviceUser.Id);
+            msGraph.DeleteDocumentById(serviceUser.Id, largeDoc.id);
 
             Console.WriteLine("Ended!");
         }
