@@ -21,17 +21,9 @@ namespace msgraph
         private GraphServiceClient _graphClient;
         private RESTClient _restClient;
         private OneDrive _oneDrive;
-        private IConfiguration _configuration;
 
-        public MicrosoftGraphAPI(IConfiguration configuration)
+        public MicrosoftGraphAPI(string connectionString)
         {
-            _configuration = configuration;
-            string connectionString = null;
-            string appId = _configuration.GetSection("appId").Value;
-            string appSecret = _configuration.GetSection("appSecret").Value;
-            string tenantId = _configuration.GetSection("tenantId").Value;
-            connectionString = $"RunAs=App;AppId={appId};TenantId={tenantId};AppKey={appSecret}";
-
             AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider(connectionString);
 
             string microsoftGraphEndpoint = "https://graph.microsoft.com";
@@ -46,6 +38,19 @@ namespace msgraph
             _restClient = new RESTClient(token);
             _graphClient = new GraphServiceClient(new DelegateAuthenticationProvider(authenticationDelegate));
             _oneDrive = new OneDrive(_restClient);
+        }
+
+        public MicrosoftGraphAPI(IConfiguration configuration) : this(buildConnectionString(configuration))
+        {
+        }
+
+        private static string buildConnectionString(IConfiguration configuration)
+        {
+            string appId = configuration.GetSection("appId").Value;
+            string appSecret = configuration.GetSection("appSecret").Value;
+            string tenantId =  configuration.GetSection("tenantId").Value;
+            var connectionString = $"RunAs=App;AppId={appId};TenantId={tenantId};AppKey={appSecret}";
+            return connectionString;
         }
 
         public User GetUser(String userPrincipalName)
