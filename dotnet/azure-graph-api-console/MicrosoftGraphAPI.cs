@@ -76,27 +76,21 @@ namespace msgraph
             return user;
         }
 
-        public IEnumerable<Document> GetDocuments()
+        public IEnumerable<Document> GetDocuments(string userId)
         {
-            //https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive
-            //https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/driveitem_get_content_format
-            //https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/driveitem
-
-
-            var format = "pdf";
-            var user = GetUser("mrs@commentor.dk");
             //var url = $"https://graph.microsoft.com/v1.0/drive/items";
-            //var url = $"https://graph.microsoft.com/v1.0/me/drives";
-            var urlRoot = $"https://graph.microsoft.com/v1.0/";
+            //var url = $"https://graph.microsoft.com/v1.0/me/drives";            
             //var url = $"{urlRoot}/drive/root:/Documents/Test Results:/children";
             //var url = $"{urlRoot}/drive/root:/Documents/";
             //var url = $"{urlRoot}/me";
             //var url = $"{urlRoot}/users/{user.Id}/drive"; // OK            
             //var url = $"{urlRoot}/users/{user.Id}/drives"; // OK Will return "OneDrive" as an item
-            var url = $"{urlRoot}/users/{user.Id}/drive/root/children"; // OK
             //var url = $"{urlRoot}/users/{user.Id}/drive/items/01IKWSDMYRMAGMO7EIFVFJDOS7ZN5TM3C5"; // OK
             //var url = $"{urlRoot}/users/{user.Id}/drive/items/01IKWSDMYRMAGMO7EIFVFJDOS7ZN5TM3C5/children"; // OK, will give all documents
             //var url = $"{urlRoot}/users/{user.Id}/drive/items/01IKWSDM3CLTXLYGAVUFHLUSXDWE54KW5U/content?format={format}";
+
+            var urlRoot = $"https://graph.microsoft.com/v1.0/";
+            var url = $"{urlRoot}/users/{userId}/drive/root/children";
 
             String responseBody = _restClient.getResponseAsString(url);
             Console.WriteLine(responseBody);

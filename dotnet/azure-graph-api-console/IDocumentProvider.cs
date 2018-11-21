@@ -6,7 +6,7 @@ namespace msgraph
 {
     public interface IDocumentProvider
     {
-        IEnumerable<Document> GetDocuments();
+        IEnumerable<Document> GetDocuments(string userId);
         byte[] ConvertDocumentToPDF(byte[] inputDocumentBytes, string extension, string userId);
         User GetUser(String userPrincipalName);
         IEnumerable<Document> GetRootDocuments(string userId);

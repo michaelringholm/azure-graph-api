@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Graph;
 
 namespace msgraph
 {
@@ -19,7 +20,20 @@ namespace msgraph
 
             var msGraph = builder.GetService<IDocumentProvider>();
             var serviceUser = msGraph.GetUser("pdf@commentor.dk");
-            var documents = msGraph.GetDocuments();
+            simpleTest(msGraph, serviceUser);
+            extendedTest(msGraph, serviceUser);
+
+            Console.WriteLine("Ended!");
+        }
+
+        private static void simpleTest(IDocumentProvider msGraph, User serviceUser)
+        {
+            var documents = msGraph.GetDocuments(serviceUser.Id);
+        }
+
+        private static void extendedTest(IDocumentProvider msGraph, Microsoft.Graph.User serviceUser)
+        {
+            var documents = msGraph.GetDocuments(serviceUser.Id);
             //var folders = msGraph.GetFolders();
 
             /*var htmlLargeInputBytes = File.ReadAllBytes("..\\..\\resources\\source\\large-file.pptx");
@@ -61,8 +75,6 @@ namespace msgraph
             var largeDocName = Guid.NewGuid().ToString();
             var largeDoc = msGraph.UploadLargeDocument(largeBuffer, $"Temp/{largeDocName}.txt", serviceUser.Id);
             msGraph.DeleteDocumentById(serviceUser.Id, largeDoc.id);
-
-            Console.WriteLine("Ended!");
         }
     }
 }
