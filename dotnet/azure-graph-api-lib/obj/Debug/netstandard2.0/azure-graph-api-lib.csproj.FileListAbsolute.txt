@@ -1,4 +1,0 @@
-c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netstandard2.0\azure-graph-api-lib.csprojAssemblyReference.cache
-c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netstandard2.0\azure-graph-api-lib.csproj.CoreCompileInputs.cache
-c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netstandard2.0\azure-graph-api-lib.AssemblyInfoInputs.cache
-c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netstandard2.0\azure-graph-api-lib.AssemblyInfo.cs
