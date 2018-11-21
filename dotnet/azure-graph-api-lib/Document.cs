@@ -1,4 +1,4 @@
-namespace msgraph
+namespace com.opusmagus.azure.graph
 {
     public class Document {
         //public string DocumentId { get; set; }

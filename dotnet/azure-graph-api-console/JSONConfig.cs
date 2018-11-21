@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
 
-namespace msgraph
+namespace com.opusmagus.azure.graph
 {
     public class JSONConfig : IConfiguration
     {

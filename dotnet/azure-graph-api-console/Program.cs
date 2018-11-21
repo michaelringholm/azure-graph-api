@@ -2,9 +2,8 @@
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Graph;
 
-namespace msgraph
+namespace com.opusmagus.azure.graph
 {
     class Program
     {
@@ -21,12 +20,12 @@ namespace msgraph
             var msGraph = builder.GetService<IDocumentProvider>();
             var serviceUser = msGraph.GetUser("pdf@commentor.dk");
             simpleTest(msGraph, serviceUser);
-            extendedTest(msGraph, serviceUser);
+            //extendedTest(msGraph, serviceUser);
 
             Console.WriteLine("Ended!");
         }
 
-        private static void simpleTest(IDocumentProvider msGraph, User serviceUser)
+        private static void simpleTest(IDocumentProvider msGraph, Microsoft.Graph.User serviceUser)
         {
             var documents = msGraph.GetDocuments(serviceUser.Id);
         }

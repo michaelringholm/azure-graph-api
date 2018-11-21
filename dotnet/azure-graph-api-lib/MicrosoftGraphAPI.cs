@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.IO;
 
-namespace msgraph
+namespace com.opusmagus.azure.graph
 {
     // https://developer.microsoft.com/en-us/graph/graph-explorer?request=users?$filter=startswith(givenName,%27J%27)&method=GET&version=v1.0#
     // https://developer.microsoft.com/en-us/graph/docs/concepts/auth_v2_service

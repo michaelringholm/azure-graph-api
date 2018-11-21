@@ -1,0 +1,9 @@
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\bin\Debug\netcoreapp2.1\azure-graph-api-lib.deps.json
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\bin\Debug\netcoreapp2.1\azure-graph-api-lib.dll
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\bin\Debug\netcoreapp2.1\azure-graph-api-lib.pdb
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netcoreapp2.1\azure-graph-api-lib.csprojAssemblyReference.cache
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netcoreapp2.1\azure-graph-api-lib.csproj.CoreCompileInputs.cache
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netcoreapp2.1\azure-graph-api-lib.AssemblyInfoInputs.cache
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netcoreapp2.1\azure-graph-api-lib.AssemblyInfo.cs
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netcoreapp2.1\azure-graph-api-lib.dll
+c:\Data\GitHub\azure-graph-api\dotnet\azure-graph-api-lib\obj\Debug\netcoreapp2.1\azure-graph-api-lib.pdb

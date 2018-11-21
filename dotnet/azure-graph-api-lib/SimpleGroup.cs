@@ -1,6 +1,6 @@
 using System;
 
-namespace msgraph
+namespace com.opusmagus.azure.graph
 {
     public class SimpleGroup
     {

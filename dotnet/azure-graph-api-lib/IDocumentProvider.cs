@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Graph;
 
-namespace msgraph
+namespace com.opusmagus.azure.graph
 {
     public interface IDocumentProvider
     {
