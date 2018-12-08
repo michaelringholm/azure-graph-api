@@ -1,1 +1,6 @@
 local
+resources/target
+appsettings.com-dev-onedrive-app.json
+appsettings.dev.json
+appsettings.fp-indrv-dev-app.json
+appsettings.fp-indrv-test-app.json
