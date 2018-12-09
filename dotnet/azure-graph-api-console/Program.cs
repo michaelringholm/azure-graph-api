@@ -20,7 +20,7 @@ namespace com.opusmagus.azure.graph
             var msGraph = builder.GetService<IDocumentProvider>();
             var serviceUser = msGraph.GetUser("pdf@commentor.dk");
             simpleTest(msGraph, serviceUser);
-            //extendedTest(msGraph, serviceUser);
+            extendedTest(msGraph, serviceUser);
 
             Console.WriteLine("Ended!");
         }
