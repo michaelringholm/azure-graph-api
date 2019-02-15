@@ -19,8 +19,11 @@ namespace com.opusmagus.azure.graph
 
             var msGraph = builder.GetService<IDocumentProvider>();
             var serviceUser = msGraph.GetUser("pdf@commentor.dk");
-            simpleTest(msGraph, serviceUser);
-            extendedTest(msGraph, serviceUser);
+            //simpleTest(msGraph, serviceUser);
+            //extendedTest(msGraph, serviceUser);
+            msGraph.CreateUser("mrs-demo@commentor.dk", "Michael Demo", "MRSDemoUser", "Test123!!##");
+            var mrsDemo = msGraph.GetUser("mrs-demo@commentor.dk");
+            msGraph.DeleteUser("mrs-demo@commentor.dk");
 
             Console.WriteLine("Ended!");
         }

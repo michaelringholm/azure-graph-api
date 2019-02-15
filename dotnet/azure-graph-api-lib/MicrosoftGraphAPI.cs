@@ -76,6 +76,19 @@ namespace com.opusmagus.azure.graph
             return user;
         }
 
+        public bool DeleteUser(string userPrincipalName)
+        {
+            //https://docs.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0
+            //https://graph.microsoft.com/v1.0/users/{user-id} DELETE
+            //https://docs.microsoft.com/en-us/graph/permissions-reference#user-permissions
+            //User.ReadWrite.All (delegated)
+            var urlRoot = $"https://graph.microsoft.com/v1.0/";
+            var url = $"{urlRoot}/users/{userPrincipalName}";
+            var responseBody = _restClient.delResponse(url);
+            Console.WriteLine(responseBody);
+            return true;
+        }         
+
         public IEnumerable<Document> GetDocuments(string userId)
         {
             //var url = $"https://graph.microsoft.com/v1.0/drive/items";
@@ -96,7 +109,7 @@ namespace com.opusmagus.azure.graph
             Console.WriteLine(responseBody);
             var oData = JsonConvert.DeserializeObject<ODataDocument>(responseBody);
             return oData.Value;
-        }
+        }       
 
         public byte[] ConvertDocumentToPDF(byte[] inputDocumentBytes, string extension, string userId)
         {

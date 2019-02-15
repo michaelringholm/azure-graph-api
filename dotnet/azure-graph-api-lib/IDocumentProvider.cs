@@ -16,5 +16,7 @@ namespace com.opusmagus.azure.graph
         Document UploadSmallDocument(byte[] inputDocumentBytes, string itemPath, string userId);
         Document UploadLargeDocument(byte[] inputDocumentBytes, string itemPath, string userId);
         void DeleteDocumentById(string userId, string itemId);
+        User CreateUser(String userPrincipalName, String displayName, String mailNickName, String password);
+        bool DeleteUser(string userPrincipalName);
     }
 }
