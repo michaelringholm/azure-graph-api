@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,14 +19,23 @@ namespace com.opusmagus.azure.graph
             var builder = serviceCollection.BuildServiceProvider();
 
             var msGraph = builder.GetService<IDocumentProvider>();
-            var serviceUser = msGraph.GetUser("pdf@commentor.dk");
-            //simpleTest(msGraph, serviceUser);
-            //extendedTest(msGraph, serviceUser);
-            msGraph.CreateUser("mrs-demo@commentor.dk", "Michael Demo", "MRSDemoUser", "Test123!!##");
-            var mrsDemo = msGraph.GetUser("mrs-demo@commentor.dk");
-            msGraph.DeleteUser("mrs-demo@commentor.dk");
+            String userPrincipalName = "pdf@commentor.dk";
+            var serviceUser = msGraph.GetUser($"{userPrincipalName}");
+            var iterations = 5;
+            var sw = Stopwatch.StartNew();
+            for(var i=0;i<iterations;i++)
+                ConvertWordToPDF(msGraph,serviceUser.Id);
+            sw.Stop();
 
-            Console.WriteLine("Ended!");
+            Console.WriteLine($"Ran {iterations} iterations in {sw.ElapsedMilliseconds} ms with an avg of {sw.ElapsedMilliseconds/iterations} ms!");
+        }
+
+        private static void ConvertWordToPDF(IDocumentProvider documentProvider, string serviceUserId)
+        {
+            var inputBytes = File.ReadAllBytes("..\\..\\resources\\source\\doc.docx");
+            var guid = Guid.NewGuid();
+            byte[] pdfDocBytes = documentProvider.ConvertDocumentToPDF(inputBytes, $"Temp/{guid}.docx", serviceUserId);
+            File.WriteAllBytes($"..\\..\\resources\\target\\{guid}.pdf", pdfDocBytes);
         }
 
         private static void simpleTest(IDocumentProvider msGraph, Microsoft.Graph.User serviceUser)
@@ -77,6 +87,20 @@ namespace com.opusmagus.azure.graph
             var largeDocName = Guid.NewGuid().ToString();
             var largeDoc = msGraph.UploadLargeDocument(largeBuffer, $"Temp/{largeDocName}.txt", serviceUser.Id);
             msGraph.DeleteDocumentById(serviceUser.Id, largeDoc.id);
+        }
+
+        private static void RunExtendedTest() {
+            //var serviceUser = msGraph.GetUser("pdf@commentor.dk");
+            //simpleTest(msGraph, serviceUser);
+            //extendedTest(msGraph, serviceUser);
+            //msGraph.CreateUser("mrs-demo@commentor.dk", "Michael Demo", "MRSDemoUser", "Test123!!##");
+            //var mrsDemo = msGraph.GetUser("mrs-demo@commentor.dk");
+            //msGraph.DeleteUser("mrs-demo@commentor.dk");
+            //var serviceUser = msGraph.GetUser("nha@commentor.dk");
+            //String userPrincipalName = "mrs.commentor@gmail.com";
+            //var serviceUser = msGraph.GetUser($"{userPrincipalName.Replace("@", "_")}#EXT#@opusmagus.onmicrosoft.com");
+            //msGraph.DeleteUser(serviceUser.Id);
+            //msGraph.DeleteUser($"{userPrincipalName}");
         }
     }
 }

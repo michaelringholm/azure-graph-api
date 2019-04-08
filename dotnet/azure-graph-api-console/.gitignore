@@ -331,3 +331,4 @@ ASALocalRun/
 
 # MRS
 appsettings.dev.json
+appsettings.dev.*.json

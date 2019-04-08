@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -59,11 +60,21 @@ namespace com.opusmagus.azure.graph
 
         public byte[] getResponseAsBytes(string url)
         {
-            var response = getResponse(url);
-            Console.Error.WriteLine(response);
-            response.EnsureSuccessStatusCode();
-            var responseBodyBytes = response.Content.ReadAsByteArrayAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-            return responseBodyBytes;
+            var retryAttempts = 3;
+            HttpResponseMessage response = null;
+            while(retryAttempts > 0) {
+                response = getResponse(url);
+                Console.Error.WriteLine(response);
+                if(!response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.ServiceUnavailable)
+                    continue;
+                break;
+            }            
+            if(response != null) {
+                response.EnsureSuccessStatusCode();
+                var responseBodyBytes = response.Content.ReadAsByteArrayAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+                return responseBodyBytes;            
+            }
+            throw new Exception("Ending retry loop due to too many 503s");
         }
     }
 }
